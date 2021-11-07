@@ -1,33 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
-  var selector = document.querySelector('input[type="tel"]');
-    var im = new Inputmask('+7 (999)-999-99-99');
+  let selector = document.querySelector('input[type="tel"]');
+  let im = new Inputmask('+7 (999)-999-99-99');
 
-    im.mask(selector);
+  im.mask(selector);
 
-    new JustValidate('.form', {
-      rules: {
-        name: {
-          custom: 'Слава',
-          required: true,
-          minLength: 2,
-          maxLength: 30,
-        },
-        tel: {
-          required: true,
-          function: (name, value) => {
-            const phone = selector.inputmask.unmaskedvalue()
-            return Number(phone) && phone.length === 10;
-          }
-        },
+  new JustValidate('.form', {
+    rules: {
+      name: {
+        required: true,
+        minLength: 2,
+        maxLength: 30,
+        strength: {
+          custom: '^([a-zA-Z]{2,}\s[a-zA-Z]{1,}\'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)'
+        }
       },
-      messages: {
-        name: {
-          // required: "Как вас зовут?",
-          minLength: 'Ввелите больше 2-х символов',
-          custom: 'Недопустимый формат'
-        },
-        tel: "Укажите ваш телефон",
+      tel: {
+        required: true,
+        function: (name, value) => {
+          const phone = selector.inputmask.unmaskedvalue();
+          return Number(phone) && phone.length === 10;
+        }
       },
-      colorWrong: '#d11616'
-    });
+    },
+    messages: {
+      name: {
+        required: 'Как вас зовут?',
+        minLength: 'Слишком короткое имя',
+        strength: 'Недопустимый формат',
+      },
+      tel: 'Укажите ваш телефон',
+    },
+    colorWrong: '#d11616'
+  });
 })
