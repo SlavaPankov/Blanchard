@@ -1,0 +1,68 @@
+/* footer */
+
+.footer {
+  background: #000;
+}
+
+.footer__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 50px 50px;
+}
+
+.footer__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-left: auto;
+}
+
+.footer__item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.footer__item-vk-logo,
+.footer__item-inst-logo,
+.footer__item-facebook-logo{
+  -webkit-transition: fill 0.3s ease-in-out;
+  -o-transition: fill 0.3s ease-in-out;
+  transition: fill 0.3s ease-in-out;
+}
+
+.footer__item-vk-logo:active,
+.footer__item-inst-logo:active,
+.footer__item-facebook-logo:active {
+  fill: var(--color-btn);
+}
+
+.footer__item-vk-logo:hover,
+.footer__item-inst-logo:hover,
+.footer__item-facebook-logo:hover {
+  fill: var(--white);
+}
+
+.footer__item-link:focus {
+  outline: none;
+}
+
+.footer__item-link:focus .footer__item-vk-logo,
+.footer__item-link:focus .footer__item-inst-logo,
+.footer__item-link:focus .footer__item-facebook-logo {
+  fill: var(--white);
+}
+
+.footer__item:active .footer__item-vk-logo,
+.footer__item:active .footer__item-inst-logo,
+.footer__item:active .footer__item-facebook-logo {
+  fill: var(--color-btn);
+}

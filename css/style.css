@@ -1,0 +1,51 @@
+:root {
+  --black: #000;
+  --dark-grey: #333;
+  --white: #fff;
+  --color-btn: #9d5cd0;
+  --color-btn-hover: #c283f3;
+  --color-btn-active: #7943a4;
+  --border: #d1a9f0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-family: 'open_sans', sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark-grey);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+h1, p, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+.container {
+  max-width: 1700px;
+  margin: 0 auto;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+
+body {
+  position: relative;
+}
